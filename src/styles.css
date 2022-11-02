@@ -1,4 +1,43 @@
 .container{
-    border: 13px solid black;
+    border: 3px solid black;
+    height: 600px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header{
+    border: 3px solid red;
+    height: 150px;
+    overflow: auto;
+}
+
+.btn{
+    padding:10px;
+    margin:10px;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+li{
+    list-style: none;
+}
+
+.stocks{
+    border: 5px blue solid;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
     height:300px;
 }
+
+.stock{
+    border: 3px green solid;
+    margin:;
+    padding:10px;
+    width:100%;
+    display:flex;
+    text-align: start;
+}
+

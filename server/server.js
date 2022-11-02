@@ -9,11 +9,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 //renders html in root
-app.get('/', (req,res)=>{
+app.get('/api', (req,res)=>{
    return res.sendFile(path.resolve(__dirname, '../src/index.html'));
 });
 
-app.use('/stocks', stocksRouter)
+app.use('/api/stocks', stocksRouter)
 
 app.get('/hi', (req,res)=> {
     return res.status(200).json({hi:'hiiii'});
