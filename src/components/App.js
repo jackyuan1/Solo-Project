@@ -15,15 +15,16 @@ const App = () => {
     const toggleDropdown = () => {
         setOpen(!open)
     };
+    //add a ticker to stocks components
     const addTicker = () => {
         console.log('trying to add ticker idk')
-        const input = document.querySelector('input')
+        const input = document.querySelector('.ticker')
         console.log(input.value)
         axios.post('./../../api/stocks', {ticker: input.value})
         .then(res => {
             console.log('in appjs', res.data[0])
             setStocks(stocks.concat(res.data[0]))
-            console.log(stocks)
+            // console.log(stocks)
         })
         .catch(err=> console.log({err: 'err in addTicker'}))
         // .then(data => {
@@ -32,6 +33,14 @@ const App = () => {
         //     console.log('app.js', data)
         // })
     }
+//deletes a stock in the stocks component
+    const deleteTicker = (ticker) => {
+        console.log('delete', ticker)
+        setStocks(stocks.filter(el=>{
+           return el.ticker!==ticker
+        }))
+    }
+
     //Like componentdidmount/update
     useEffect(() => {
         console.log('State has updated!')
@@ -45,7 +54,10 @@ const App = () => {
                 open = {open}
                 />
 
-                <Stocks stocks = {stocks}/>
+                <Stocks 
+                stocks = {stocks}
+                deleteTicker = {deleteTicker}
+                />
             </div>
         )
     }
