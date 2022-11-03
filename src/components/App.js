@@ -18,12 +18,12 @@ const App = () => {
     //add a ticker to stocks components
     const addTicker = () => {
         console.log('trying to add ticker idk')
-        const input = document.querySelector('.ticker')
+        const input = document.querySelector('.ticker1')
         console.log(input.value)
         axios.post('./../../api/stocks', {ticker: input.value})
         .then(res => {
-            console.log('in appjs', res.data[0])
-            setStocks(stocks.concat(res.data[0]))
+            console.log('in appjs', res)
+            setStocks(stocks.concat(res.data))
             // console.log(stocks)
         })
         .catch(err=> console.log({err: 'err in addTicker'}))
@@ -36,8 +36,8 @@ const App = () => {
 //deletes a stock in the stocks component
     const deleteTicker = (ticker) => {
         console.log('delete', ticker)
-        setStocks(stocks.filter(el=>{
-           return el.ticker!==ticker
+        setStocks((arg)=>arg.filter(el=>{
+            return el.ticker!==ticker
         }))
     }
 
@@ -53,7 +53,6 @@ const App = () => {
                 addTicker ={addTicker}
                 open = {open}
                 />
-
                 <Stocks 
                 stocks = {stocks}
                 deleteTicker = {deleteTicker}
@@ -62,6 +61,7 @@ const App = () => {
         )
     }
     
+    // <h2 style={{float:"left", position:'absolute', margin:'30px'}}>Stock List</h2>
   // <button onClick={()=>setCount(count +1)}>Random Counter</button>
   // <Checking apple = 'test prop'/>
 

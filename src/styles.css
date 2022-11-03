@@ -20,12 +20,21 @@
     background-color: lightblue;
     border-radius: 10px;
 }
-
+/* this is random stuff on html LOL */
 .ticker{
     padding:5px;
     margin: 10px;
     border-radius: 10px;
     font-size: .9rem;
+    text-indent: 5px;
+}
+/* this is in app.js i got lazy w names*/ 
+.ticker1{
+    padding:5px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: .9rem;
+    text-indent: 5px;
 }
 
 li{
@@ -33,20 +42,20 @@ li{
 }
 
 .stocks{
-    border: 5px blue solid;
+    border: 3px blue solid;
     display:flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: flex-start;
-    height:440px;
+    max-height:440px;
     overflow: auto;
 }
 
 .stock{
     border: 3px green solid;
-    margin:;
     padding:10px;
-    width:90%;
+    margin: 3px 0;
+    width:60%;
     display:flex;
     text-align: start;
     justify-content: space-between;
@@ -61,7 +70,37 @@ li{
 
 /* Index stuff below? */
 
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+
+form{
+    text-align: center;
+}
+
+input[value='login']{
+    padding:5px 15px;
+    text-indent: 0;
+    background-color: aliceblue;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    transform: scale(1.1);
+}
+form:hover ~ #root{
+    background-image: url('https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F001%2F499%2F832%2F75c.jpg');
+}
 .signup{
-    margin:10px;
-    padding:10px;
+    margin:10px auto;    
+    padding: 5px 15px;
+    font-size: large;
+    border: 2px black solid;
+    border-radius: 10px;
+    background-color: rgb(78, 182, 216, .3);
+    
 }
